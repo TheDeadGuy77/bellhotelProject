@@ -111,7 +111,7 @@ prenotazioneRouter.patch('/modificaPrenotazione',async(req,res)=>{
             return;
         }
         else{
-            if(prenotaz.inizioSoggiorno == req.body.inizioSoggiorno){
+            if(prenotaz.inizioSoggiorno == req.body.inizioSoggiorno  || prenotaz.fineSoggiorno == req.body.fineSoggiorno){
                 res.status(409).json({message: "Conflict"});
                 return;
             }
