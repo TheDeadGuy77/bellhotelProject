@@ -43,8 +43,8 @@ inserisciHS.post('/inserisciHotel', async (req,res)=>{
 });
 
 inserisciHS.post('/inserisciStanza',async (req,res)=>{
-    let id_utente = req.body._idUtente;
-    let id_hotel = req.body._idHotel;
+    let id_utente = req.body.IDutente;
+    let id_hotel = req.body.IDhotel;
     if(!mongoose.isValidObjectId(id_utente) || !mongoose.isValidObjectId(id_hotel)){
         res.status(400).json({message: "Bad Request"});
         return;
