@@ -57,7 +57,7 @@ authRouter.post('/login', async (req,res)=>{
         tipoAccount: utente.tipoAccount
     });
 });
-authRouter.get('/getAll', async (req,res)=>{ // solo per testing
+authRouter.get('/getAll', async (req,res)=>{ // solo per testing. DA ELIMINARE
     let utente = await Utente.find();
     res.status(200).json({
         message: utente
