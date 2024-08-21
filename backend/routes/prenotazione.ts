@@ -9,8 +9,8 @@ const prenotazioneRouter = express.Router();
 //nel body arriva scelta dell'hotel. Dentro vi è _id hotel e campo part per identificare caso di scelta hotel o scelta stanza
 
 prenotazioneRouter.post('/prenotazione', async (req,res)=>{
-    let hotelChoice = req.body._id;
     if(req.body.part == 'hotel'){
+        let hotelChoice = req.body._id;
         if(!mongoose.isValidObjectId(hotelChoice)){
             res.status(400).json({message: "Bad Request"});
             return;
