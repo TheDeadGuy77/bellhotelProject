@@ -20,22 +20,6 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
             res.status(404).json({message: `Non sono presenti hotel nella provincia ${req.body.provincia} nel database.`});
         }
         else{
-            /*
-            let stanze = await Stanza.find({hotelAppartenenza: hotelChoice});
-            if(!stanze){
-                res.status(404).json({message: `Non sono presenti stanze dell'hotel ${req.body.nome} nel database.`});
-            }
-            else{
-                stanze.forEach(async (stanza:any)=>{
-                    if(stanza.reserved == false){
-                        res.status(200).json({
-                        _id: stanza._id,
-                        numPostiLetto: stanza.numPostiLetto
-                        });
-                    }
-                });
-            }
-                */
             let stanze = await Stanza.find({hotelAppartenenza: hotelChoice});
             const availableStanze: {_id: any; numPostiLetto: any;}[] = [];
             await Promise.all(stanze.map(async (stanza:any)=>{
