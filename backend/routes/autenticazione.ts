@@ -64,14 +64,15 @@ authRouter.get('/getAll', async (req,res)=>{ // solo per testing. DA ELIMINARE
     })
 })
 
-
-// Mettere fonte delle re stackoverflow
 //functions to check valid email/password
+
+// https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
 function validateEmail(text:string){
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(text);
 }
-//password valid when its length >=8 and it has at least 1 upper-case letter, one lower-case and one special char (*%&$@#!?^) 
+//password valid when its length >=8 and it has at least 1 upper-case letter, one lower-case letter and one special char (*%&$@#!?^)
+// https://stackoverflow.com/a/59116316
 function validatePsw(text:string){
     var re = /^((?=.*[a-z])(?=.*[A-Z])(?=.*[%&#!@\*\^]).{8,})$/;
     return re.test(text);
