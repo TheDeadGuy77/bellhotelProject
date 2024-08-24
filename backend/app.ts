@@ -1,7 +1,7 @@
 //Dependencies
 import dotenv from 'dotenv';
 import express, { Express } from 'express';
-//import cors from 'cors';
+import cors from 'cors';
 import deleteRouter from './routes/eliminaAccount';
 import authRouter from './routes/autenticazione';
 import ricercaRouter from './routes/ricerca';
@@ -16,7 +16,7 @@ const app: Express = express();
 
 
 // Middleware to parse form data
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
