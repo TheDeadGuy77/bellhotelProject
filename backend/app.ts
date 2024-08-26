@@ -20,9 +20,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', authRouter);
-app.use('/', deleteRouter);
-app.use('/', ricercaRouter);
+app.use('/api/', authRouter);
+app.use('/api/', deleteRouter);
+app.use('/api/', ricercaRouter);
 app.use('/', prenotazioneRouter);
 app.use('/', inserisciHS);
 
