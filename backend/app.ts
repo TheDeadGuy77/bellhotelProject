@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/', authRouter);
 app.use('/api/', deleteRouter);
 app.use('/api/', ricercaRouter);
-app.use('/', prenotazioneRouter);
-app.use('/', inserisciHS);
+app.use('/api/', prenotazioneRouter);
+app.use('/api/', inserisciHS);
 
 export default app;
