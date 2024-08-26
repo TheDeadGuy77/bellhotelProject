@@ -15,6 +15,7 @@ authRouter.post('/signUp',async (req,res)=>{
     //account type validation
      if(req.body.tipoAccount != 'gestore' && req.body.tipoAccount != 'cliente'){
          res.status(400).json({message: "Bad Request"})
+          return;
      }
     //check for email address in database(maybe the email is already present)
     let utente = await Utente.findOne({email: req.body.email});
