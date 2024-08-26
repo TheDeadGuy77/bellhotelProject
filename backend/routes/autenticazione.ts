@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 const authRouter = express.Router();
 
 //add new user
-authRouter.post('/api/signUp',async (req,res)=>{
+authRouter.post('/signUp',async (req,res)=>{
      //request validation
      if(!(validateEmail(req.body.email) && validatePsw(req.body.password))){
          res.status(400).json({message: "Bad Request"});
