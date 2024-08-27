@@ -25,6 +25,7 @@ ricercaRouter.get('/ricerca', async (req,res)=>{
                 message: "OK",
                 hotels: availableHotels
             });
+           console.log(availableHotels);
        }
        else{
             res.status(404).json({message: "Not found"});
