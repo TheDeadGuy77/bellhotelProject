@@ -8,6 +8,7 @@ ricercaRouter.get('/ricerca', async (req,res)=>{
     let hotels = await Hotel.find({provincia : req.query.provincia});
     if(!hotels){
         res.status(404).json({message: "Not found"});
+        return;
     }
     else{
        const availableHotels: { _id: any; hotel: any; numeroStelle: any; }[] = [];
