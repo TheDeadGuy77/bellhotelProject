@@ -12,7 +12,7 @@ ricercaRouter.get('/ricerca', async (req,res)=>{
     else{
        const availableHotels: { _id: any; hotel: any; numeroStelle: any; }[] = [];
        await Promise.all(hotels.map(async (hotel:any)=>{ // waiting for operations in map function to complete. map iterates over hotels and for each hotel searches for available rooms
-            const stanze = await Stanza.find({hotelAppartenenza: hotel._id, reserved: false, numPostiLetto: {$eq: parseint(req.query.numeroPersone)} });
+            const stanze = await Stanza.find({hotelAppartenenza: hotel._id, reserved: false, numPostiLetto: {$eq: parseInt(req.query.numeroPersone)} });
             if(stanze.length > 0){
                 availableHotels.push({_id: hotel._id, hotel: hotel.nome, numeroStelle: hotel.numeroStelle});
             }
