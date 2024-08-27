@@ -41,7 +41,7 @@ authRouter.post('/signUp',async (req,res)=>{
 });
 //login
 authRouter.post('/login', async (req,res)=>{
-    let utente = await Utente.findOne({email: req.body.email, password: req.body.password, tipoAccount: req.body.tipoAccount});
+    let utente = await Utente.findOne({email: req.body.email, password: req.body.password});
     if(!utente){
         res.status(404).json({message: "Not Found"});
         return;
