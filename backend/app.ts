@@ -19,7 +19,7 @@ const app: Express = express();
 app.use(cors({
     origin: 'https://provasite.netlify.app',
     methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
-    allowedHeaders: 'Content-Type,Authorization',
+    allowedHeaders: 'Content-Type,Authorization,application/java',
     credentials: true
 
 }));
