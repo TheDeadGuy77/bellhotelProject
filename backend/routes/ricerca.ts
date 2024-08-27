@@ -22,7 +22,7 @@ ricercaRouter.get('/ricerca', async (req,res)=>{
 
        if(availableHotels.length > 0){
             res.status(200).json({
-                message: "OK",
+                //message: "OK",
                 hotels: availableHotels
             });
            console.log(availableHotels);
