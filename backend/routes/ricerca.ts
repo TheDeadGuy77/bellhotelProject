@@ -5,7 +5,7 @@ import Stanza from '../models/stanza';
 const ricercaRouter = express.Router();
 
 ricercaRouter.get('/ricerca', async (req,res)=>{
-    req.header('Access-Control-Allow-Origin', '*');
+    
     let hotels = await Hotel.find({provincia : req.query.provincia});
     if(!hotels){
         res.status(404).json({message: "Not found"});
