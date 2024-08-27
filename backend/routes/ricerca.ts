@@ -5,14 +5,14 @@ import Stanza from '../models/stanza';
 const ricercaRouter = express.Router();
 
 ricercaRouter.get('/ricerca', async (req,res)=>{
-    let hotels = await Hotel.find({provincia : req.body.provincia});
+    let hotels = await Hotel.find({provincia : req.query.provincia});
     if(!hotels){
         res.status(404).json({message: "Not found"});
     }
     else{
         /*
         hotels.forEach(async (hotel:any)=>{ // vedere errore headers. Errore dato che manda due response. Vedere di provare a togliere il foreach
-            let stanze = await Stanza.find({hotelAppartenenza: hotel._id, reserved: false, numPostiLetto: {$eq: req.body.numeroPersone} });
+            let stanze = await Stanza.find({hotelAppartenenza: hotel._id, reserved: false, numPostiLetto: {$eq: req.query.numeroPersone} });
             if(stanze){
                 let hotelRes = hotel;
                 res.status(200).json({
