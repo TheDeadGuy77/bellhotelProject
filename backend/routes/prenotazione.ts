@@ -24,7 +24,7 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
             const availableStanze: {_id: any; numeroPostiLetto: any;}[] = [];
             await Promise.all(stanze.map(async (stanza:any)=>{
                 if(stanza.reserved == false){
-                    availableStanze.push({_id: stanza._id, numPostiLetto: stanza.numPostiLetto});
+                    availableStanze.push({_id: stanza._id, numeroPostiLetto: stanza.numeroPostiLetto});
                 }
             }));
             if(availableStanze.length > 0){
