@@ -17,7 +17,7 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
         }      
         let hotels = await Hotel.findOne({_id: hotelChoice}); 
         if(!hotels){
-            res.status(404).json({message: `Non sono presenti hotel nella provincia ${req.body.provincia} nel database.`});
+            res.status(404).json({message: `Not Found`});
         }
         else{
             let stanze = await Stanza.find({hotelAppartenenza: hotelChoice});
