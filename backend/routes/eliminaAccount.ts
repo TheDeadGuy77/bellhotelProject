@@ -3,6 +3,7 @@ import Utente from '../models/Utente';
 import Prenotazione from '../models/prenotazione';
 import Hotel from  '../models/hotel';
 import Stanza from '../models/stanza';
+import { Types } from 'mongoose';
 
 const deleteRouter = express.Router();
 
