@@ -9,7 +9,8 @@ const deleteRouter = express.Router();
 deleteRouter.delete('/eliminaAccount', async (req,res)=>{
 
     // Check user existence
-    let user = await Utente.findOne({email: req.body.email});
+    //let user = await Utente.findOne({email: req.body.email});
+    let user = await Utente.findById(req.body.IDutente).exec();
     if(!user){
         res.status(404).json({message: "Utente non trovato nel database"});
         return;
