@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 const inserisciHS = express.Router();
 
 inserisciHS.post('/inserisciHotel', async (req,res)=>{
-    let id_utente = req.body._id;
+    let id_utente = req.body.IDgestore;
     if(!mongoose.isValidObjectId(id_utente)){
         res.status(400).json({message: "Bad Request"});
         return;
