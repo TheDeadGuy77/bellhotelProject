@@ -9,6 +9,7 @@ const deleteRouter = express.Router();
 deleteRouter.delete('/eliminaAccount', async (req,res)=>{
 
     // Check user existence
+    /*
     let user = await Utente.findOne({email: req.body.email});
     if(!user){
         res.status(404).json({message: "Utente non trovato nel database"});
@@ -19,6 +20,16 @@ deleteRouter.delete('/eliminaAccount', async (req,res)=>{
             res.status(400).json({message: "Bad Request"});
             return;
         }
+    }
+    */
+    if(!Types.ObjectId.isValid(req.body.IDutente)){
+        res.status(400).json({message: "Bad Request"});
+        return;
+    }
+    let user = await Utente.findById(req.body.IDutente).exec();
+    if(!user){
+        res.status(404).json({message: "Utente non trovato nel database"});
+        return;
     }
     // Delete user from database -- client scenario
     if(user.tipoAccount == 'cliente'){
