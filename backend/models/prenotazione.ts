@@ -1,4 +1,4 @@
-import moongose,  { Schema } from "mongoose"
+import mongoose,  { Schema } from "mongoose"
 
 
 //Interface for "prenotazione" object Typescript
