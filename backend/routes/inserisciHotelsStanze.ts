@@ -63,7 +63,7 @@ inserisciHS.post('/inserisciStanza',async (req,res)=>{
         else{
             let newStanza = new Stanza({
                 reserved: false,
-                numPostiLetto: req.body.numeroPostiLetto,
+                numeroPostiLetto: req.body.numeroPostiLetto,
                 hotelAppartenenza: hotel._id
             });
             await newStanza.save();
