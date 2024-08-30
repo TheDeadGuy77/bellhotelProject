@@ -20,7 +20,7 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
             res.status(404).json({message: `Not Found`});
         }
         else{
-            let stanze = await Stanza.find({IDhotel: hotelChoice});
+            let stanze = await Stanza.find({hotelAppartenenza: hotelChoice});
             let availableStanze: {_id: any; numeroPostiLetto: any;}[] = [];
             await Promise.all(stanze.map(async (stanza:any)=>{
                 if(stanza.reserved == false){
