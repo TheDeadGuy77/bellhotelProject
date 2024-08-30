@@ -13,7 +13,7 @@ const stanzaSchema = new Schema<stanza>({
         type: Boolean,
         required: true
     },
-    numPostiLetto:{
+    numeroPostiLetto:{
         type: Number,
         required: true
     },
