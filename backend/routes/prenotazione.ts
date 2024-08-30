@@ -18,6 +18,7 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
         let hotels = await Hotel.findOne({_id: hotelChoice}); 
         if(!hotels){
             res.status(404).json({message: `Not Found`});
+            return;
         }
         else{
             let stanze = await Stanza.find({hotelAppartenenza: hotelChoice});
@@ -73,6 +74,7 @@ prenotazioneRouter.delete('/eliminaPrenotazione',async(req,res)=>{
     let prenotazione = await Prenotazione.findOne({_id: prenotazioneChoice});
     if(!prenotazione){
         res.status(404).json({message: "Not Found"});
+        return;
     }
     else{
         await Prenotazione.deleteOne({_id: prenotazioneChoice}); 
