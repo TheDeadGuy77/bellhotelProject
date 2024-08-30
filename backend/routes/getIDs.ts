@@ -28,7 +28,7 @@ getIDsrouter.get('/getIDs/:IDutente', async (req,res)=>{
                     prenotazioniUtente.push({_id: prenotazione._id, inizioSoggiorno: prenotazione.inizioSoggiorno, fineSoggiorno: prenotazione.fineSoggiorno});
             }));
             if(prenotazioniUtente.length > 0){
-                res.status(201).json({
+                res.status(200).json({
                     prenotazioniUtente: prenotazioniUtente
                 });
             }
@@ -46,7 +46,7 @@ getIDsrouter.get('/getIDs/:IDutente', async (req,res)=>{
                     hotelsGestore.push({_id: hotel._id, nomeHotel: hotel.nome});
             }));
             if(hotelsGestore.length > 0){
-                res.status(201).json({
+                res.status(200).json({
                     hotelsGestore: hotelsGestore
                 });
             }
