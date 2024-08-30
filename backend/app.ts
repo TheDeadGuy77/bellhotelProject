@@ -7,6 +7,7 @@ import authRouter from './routes/autenticazione';
 import ricercaRouter from './routes/ricerca';
 import prenotazioneRouter from './routes/prenotazione';
 import inserisciHS from './routes/inserisciHotelsStanze';
+import getIDsrouter from './routes/getIDs'
 
 dotenv.config();
 //const port = process.env.PORT || 8080;
@@ -25,5 +26,6 @@ app.use('/api', deleteRouter);
 app.use('/api', ricercaRouter);
 app.use('/api', prenotazioneRouter);
 app.use('/api', inserisciHS);
+app.use('/api',getIDsrouter);
 
 export default app;
