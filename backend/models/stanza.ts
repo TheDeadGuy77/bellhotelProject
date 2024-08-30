@@ -4,7 +4,7 @@ import moongose,  { Schema } from "mongoose"
 export interface stanza{
     _id: Schema.Types.ObjectId,
     reserved: boolean,
-    numPostiLetto: Number,
+    numeroPostiLetto: Number,
     hotelAppartenenza: Schema.Types.ObjectId
 }
 //MongoDB schema for stanza
