@@ -18,11 +18,11 @@ const prenotazioneSchema = new Schema<prenotazione>({
         required: true
     },
     IDhotel:{
-        type: moongose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     IDstanza:{
-        type: moongose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     inizioSoggiorno:{
@@ -34,9 +34,9 @@ const prenotazioneSchema = new Schema<prenotazione>({
         required: true
     },
     IDutente:{
-        type: moongose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Utente'
     }
 },{collection: 'Prenotazione'})
-export default moongose.model<prenotazione>('Prenotazione',prenotazioneSchema);
+export default mongoose.model<prenotazione>('Prenotazione',prenotazioneSchema);
