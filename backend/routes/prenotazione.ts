@@ -21,7 +21,7 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
             return;
         }
         else{
-            let stanze = await Stanza.find({hotelAppartenenza: hotelChoice});
+            let stanze = await Stanza.find({hotelAppartenenza: hotelChoice, reserved: false});
             console.log(stanze);
             let availableStanze: {_id: any; numeroPostiLetto: any;}[] = [];
             await Promise.all(stanze.map(async (stanza:any)=>{
