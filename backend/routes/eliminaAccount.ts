@@ -37,7 +37,7 @@ deleteRouter.delete('/eliminaAccount', async (req,res)=>{
         
         let prenotazioni = await Prenotazione.find({IDutente: user._id});
         if(!prenotazioni){
-            res.status(404).json({message: "Not Found});
+            res.status(404).json({message: "Not Found"});
         }
                                  
         await Promise.all(prenotazioni.map(async (prenotazione:any)=>{
