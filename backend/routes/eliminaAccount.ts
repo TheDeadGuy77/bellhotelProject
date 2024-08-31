@@ -27,7 +27,7 @@ deleteRouter.delete('/eliminaAccount', async (req,res)=>{
         res.status(400).json({message: "Bad Request"});
         return;
     }
-    let user = await Utente.findById(req.body.IDutente).exec();
+    let user = await Utente.findOne({_id: req.body.IDutente});
     if(!user){
         res.status(404).json({message: "Utente non trovato nel database"});
         return;
