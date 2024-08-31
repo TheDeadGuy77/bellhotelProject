@@ -34,9 +34,13 @@ deleteRouter.delete('/eliminaAccount', async (req,res)=>{
     }
     // Delete user from database -- client scenario
     if(user.tipoAccount == 'cliente'){
-        
-        await Prenotazione.deleteMany({IDutente: user._id});
-        await Utente.deleteOne({_id: user._id});
+
+        let prenotazioni = await Prenotazione.find({IDutente: user._id});
+        await Promise.all(prenotazioni.map(async (prenotazione:any)=>{
+                await Stanza.updateOne({filter, {$set: update});
+                await Prenotazione.deleteOne({_id: prenotazione._id});
+        }));
+         await Utente.deleteOne({_id: user._id});
         res.status(204).json({message: "No Content"});
         
     }
