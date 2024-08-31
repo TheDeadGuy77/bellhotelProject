@@ -35,7 +35,7 @@ deleteRouter.delete('/eliminaAccount', async (req,res)=>{
     // Delete user from database -- client scenario
     if(user.tipoAccount == 'cliente'){
         
-        Prenotazione.deleteMany({IDutente: user._id});
+        await Prenotazione.deleteMany({IDutente: user._id});
         await Utente.deleteOne({_id: user._id});
         res.status(204).json({message: "No Content"});
         
