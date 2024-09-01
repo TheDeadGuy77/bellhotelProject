@@ -17,6 +17,19 @@ dotenv.config();
 //Created app instance and router
 const app: Express = express();
 
+//API documentation
+/*
+swaggerDocument['host'] = `https://bellhotelproject-production.up.railway.app/`;
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(
+    swaggerDocument,
+    {
+        customSiteTitle: 'Documentazione',
+        customCss: ''
+    }
+));
+*/
+
 
 // Middleware to parse form data
 app.use(cors());
