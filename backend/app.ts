@@ -7,7 +7,9 @@ import authRouter from './routes/autenticazione';
 import ricercaRouter from './routes/ricerca';
 import prenotazioneRouter from './routes/prenotazione';
 import inserisciHS from './routes/inserisciHotelsStanze';
-import getIDsrouter from './routes/getIDs'
+import getIDsrouter from './routes/getIDs';
+//import swaggerUI from 'swagger-ui-express';
+//import swaggerDoc from '../swagger.json';
 
 dotenv.config();
 //const port = process.env.PORT || 8080;
