@@ -19,7 +19,7 @@ const app: Express = express();
 
 //API documentation
 /*
-swaggerDocument['host'] = `https://bellhotelproject-production.up.railway.app/`;
+swaggerDoc['host'] = `https://bellhotelproject-production.up.railway.app/`;
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(
     swaggerDoc,
