@@ -3,6 +3,7 @@ import Hotel from '../models/hotel';
 import Stanza from '../models/stanza';
 import Prenotazione from '../models/prenotazione'
 import mongoose from 'mongoose';
+import Utente from '../models/Utente';
 
 
 const prenotazioneRouter = express.Router();
@@ -10,11 +11,16 @@ const prenotazioneRouter = express.Router();
 
 prenotazioneRouter.post('/prenotazione', async (req,res)=>{
     if(req.body.part == 'hotel'){
-        if(!mongoose.isValidObjectId(IDutente){
+        
+        if(!mongoose.isValidObjectId(req.body.IDutente)){
             res.status(400).json({message: "Bad Request"});
             return;
         }
-        let user = await Utente.findOne({req.body.IDutente});
+        let user = await Utente.findOne({_id: req.body.IDutente});
+        if(!user){
+            res.status(404).json({message: "Not Found"});
+            return;
+        }
         let hotelChoice = req.body._id;
         if(!mongoose.isValidObjectId(hotelChoice) || req.body.numeroPersone < 1 || user.tipoAccount != "cliente"){
             res.status(400).json({message: "Bad Request"});
