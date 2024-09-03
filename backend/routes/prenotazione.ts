@@ -11,7 +11,7 @@ const prenotazioneRouter = express.Router();
 prenotazioneRouter.post('/prenotazione', async (req,res)=>{
     if(req.body.part == 'hotel'){
         let hotelChoice = req.body._id;
-        if(!mongoose.isValidObjectId(hotelChoice)){
+        if(!mongoose.isValidObjectId(hotelChoice) || req.body.numeroPersone < 0){
             res.status(400).json({message: "Bad Request"});
             return;
         }      
