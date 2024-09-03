@@ -34,7 +34,7 @@ getIDsrouter.get('/getIDs/:IDutente', async (req,res)=>{
             }
             else{
                 res.status(404).json({
-                    message: "Not found"
+                    message: "Not Found"
                 });
             }
         }
@@ -52,7 +52,7 @@ getIDsrouter.get('/getIDs/:IDutente', async (req,res)=>{
             }
             else{
                 res.status(404).json({
-                    message: "Not found"
+                    message: "Not Found"
                 });
             }
         }
