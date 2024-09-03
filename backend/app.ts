@@ -8,6 +8,8 @@ import ricercaRouter from './routes/ricerca';
 import prenotazioneRouter from './routes/prenotazione';
 import inserisciHS from './routes/inserisciHotelsStanze';
 import getIDsrouter from './routes/getIDs';
+import inserisciStanza from './routes/inserisciStanza';
+import inserisciHotel from './routes/inserisciHotel';
 //import swaggerUI from 'swagger-ui-express';
 //import swaggerDoc from '../swagger.json';
 
@@ -40,7 +42,8 @@ app.use('/api', authRouter);
 app.use('/api', deleteRouter);
 app.use('/api', ricercaRouter);
 app.use('/api', prenotazioneRouter);
-app.use('/api', inserisciHS);
 app.use('/api',getIDsrouter);
+app.use('/api', inserisciHotel);
+app.use('/api', inserisciStanza);
 
 export default app;
