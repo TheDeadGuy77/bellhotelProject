@@ -24,7 +24,7 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
         }
         */
         let hotelChoice = req.body._id;
-        if(!mongoose.isValidObjectId(hotelChoice) ||  user.tipoAccount != "cliente"){
+        if(!mongoose.isValidObjectId(hotelChoice)){
             res.status(400).json({message: "Bad Request"});
             return;
         }      
