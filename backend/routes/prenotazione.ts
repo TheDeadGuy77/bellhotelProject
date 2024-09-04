@@ -16,11 +16,13 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
             res.status(400).json({message: "Bad Request"});
             return;
         }
+        /*
         let user = await Utente.findOne({_id: req.body.IDutente});
         if(!user){
             res.status(404).json({message: "Not Found"});
             return;
         }
+        */
         let hotelChoice = req.body._id;
         if(!mongoose.isValidObjectId(hotelChoice) ||  user.tipoAccount != "cliente"){
             res.status(400).json({message: "Bad Request"});
@@ -49,7 +51,7 @@ prenotazioneRouter.post('/prenotazione', async (req,res)=>{
                 res.status(404).json({
                     message: "Not Found"
                 });
-                
+                return;
             }
         }
     }
