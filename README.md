@@ -1,5 +1,5 @@
 <h1>bellhotelProject</h1>
-Questa repository contiene il progetto del corso di Ingegneria del Software dell' Università degli Studi di Trento.
+Questa repository contiene il progetto del corso di Ingegneria del Software dell'anno 2023/2024 dell' Università degli Studi di Trento.
 Il progetto consiste nella simulazione di un sito per la ricerca e prenotazione di hotel e stanze.</br>
 Sono possibili nel sito azioni come:
 </br></br> 
@@ -13,4 +13,6 @@ Sono possibili nel sito azioni come:
   <li>Inserimento stanze</li>
 </ul>
 </br>
+Il progetto è stato realizzato in collaborazione con Luca Moretto e Leonardo Lorenzini.
 NB: il progetto è una versione semplificata di un reale sito con lo stesso scopo. La web app contenuta in questa repository è stata realizzata a fini puramente didattici.
+
