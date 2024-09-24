@@ -13,6 +13,6 @@ Sono possibili nel sito azioni come:
   <li>Inserimento stanze</li>
 </ul>
 </br>
-La parte di web app è stata realizzata in collaborazione con Luca Moretto, la parte di documentazione in collaborazione con Luca Moretto e Leonardo Lorenzini.
+La parte di web app è stata realizzata in collaborazione con Luca Moretto, la parte di documentazione in collaborazione con Luca Moretto e Leonardo Lorenzini.</br></br>
 NB: il progetto è una versione semplificata di un reale sito con lo stesso scopo. La web app contenuta in questa repository è stata realizzata a fini puramente didattici.
 
